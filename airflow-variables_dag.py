@@ -4,7 +4,9 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.python import PythonOperator
 
 def print_variables() -> str:
-    #Airflow UI-variable-list--(user_email=dev@dev.com)
+    # Airflow UI-variable-list :
+    # (user_email = dev@dev.com)
+    # (sample_json = {"user":"Kemal", "address":{"city":"TR","street_name":"anadolu"}})
     var_user_email = Variable.get("user_email")
     var_sample_json = Variable.get("sample_json", desearialize_json=True)
     var_env_test = Variable.get("test")
